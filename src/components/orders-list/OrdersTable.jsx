@@ -5,6 +5,7 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
+import Chip from "@material-ui/core/Chip";
 
 const styles = theme => ({
   root: {
@@ -14,6 +15,12 @@ const styles = theme => ({
   },
   table: {
     minWidth: 700
+  },
+  greenChip: {
+    backgroundColor: "lightgreen"
+  },
+  redChip: {
+    backgroundColor: "#F65252"
   }
 });
 
@@ -42,9 +49,19 @@ function OrdersTable(props) {
                 {order.name}
               </TableCell>
               <TableCell>{order.supplier}</TableCell>
-              <TableCell>{order.eta}</TableCell>
+              <TableCell>
+                <Chip
+                  className={
+                    order.deliveryOnTime ? classes.greenChip : classes.redChip
+                  }
+                  label={order.eta}
+                  color="red"
+                />
+              </TableCell>
               <TableCell>{order.file}</TableCell>
-              <TableCell>{order.status}</TableCell>
+              <TableCell>
+                <Chip label={order.status} />
+              </TableCell>
               <TableCell>{order.trackingNumber}</TableCell>
             </TableRow>
           );
