@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import DashboardAli from './DashboardAli';
+import App from './App';
 
-ReactDOM.render(<DashboardAli />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
