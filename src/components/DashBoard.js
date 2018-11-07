@@ -13,7 +13,7 @@ class DashBoard extends React.Component {
   };
   render() {
     return (
-      <div>
+      <div style={{ marginTop: "20px", marginLeft: "100px" }}>
         <div
           style={{
             clear: "both",
