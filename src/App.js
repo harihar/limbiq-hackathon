@@ -1,24 +1,34 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+
+import TextField from "@material-ui/core/TextField";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import SearchRounded from "@material-ui/icons/SearchRounded";
+
+import OrdersList from "./components/orders-list/OrdersList";
+
+import "./App.css";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <div style={{ float: "right" }}>
+          <TextField
+            style={{ margin: "normal", marginRight: "100px" }}
+            placeholder="Search"
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchRounded />
+                </InputAdornment>
+              )
+            }}
+          />
+        </div>
+        {/* <DashBoard /> */}
+        <div>
+          <OrdersList />
+        </div>
       </div>
     );
   }
