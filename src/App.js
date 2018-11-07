@@ -7,6 +7,7 @@ import SearchRounded from "@material-ui/icons/SearchRounded";
 import OrdersList from "./components/orders-list/OrdersList";
 
 import "./App.css";
+import DashBoard from "./components/DashBoard";
 
 class App extends Component {
   render() {
@@ -25,10 +26,10 @@ class App extends Component {
             }}
           />
         </div>
-        {/* <DashBoard /> */}
         <div>
           <OrdersList />
         </div>
+        <DashBoard />
       </div>
     );
   }

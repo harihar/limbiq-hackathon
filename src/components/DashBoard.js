@@ -1,6 +1,8 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import NewsFeed from "./NewsFeed";
+import Alerts from "./Alerts";
+import Charts from "./Charts";
 
 class DashBoard extends React.Component {
   styles = {
@@ -23,14 +25,14 @@ class DashBoard extends React.Component {
           <p>Hi Jane! Welcome to your dashboard.</p>
         </div>
         <Grid container spacing={24}>
-          <Grid item xs={3}>
-            <NewsFeed />
+          <Grid item xs={4}>
+            <Charts />
           </Grid>
           <Grid item xs={3}>
             <NewsFeed />
           </Grid>
           <Grid item xs={3}>
-            <NewsFeed />
+            <Alerts />
           </Grid>
         </Grid>
       </div>

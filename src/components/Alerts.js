@@ -4,29 +4,33 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Avatar from "@material-ui/core/Avatar";
-import ImageIcon from "@material-ui/icons/LinkOff";
+import ImageIcon from "@material-ui/icons/Image";
 import Divider from "@material-ui/core/Divider";
 
 import Paper from "@material-ui/core/Paper";
 
-class NewsFeed extends React.Component {
+class Alerts extends React.Component {
   alerts = [
     {
-      title: "Ali shiped your order #BLUEHAT_2018",
-      date: "Feb 9, 2018"
+      title: "Shipment #HOLD222 delayed",
+      date: "Jan 9, 2018"
     },
     {
-      title: "Ali accepted your order #BLUEHAT_2018",
-      date: "Jul 19, 2017"
+      title: "Shipment #HOLD222 accepted",
+      date: "Jun 19, 2017"
     },
     {
-      title: "Malik shiped order #RED_SOCKS_100",
-      date: "Jun 25, 2016"
+      title: "Purchase order #REDHAT200 was rejected",
+      date: "May 25, 2016"
+    },
+    {
+      title: "Purchase order #Shes was accepted",
+      date: "Feb 25, 2016"
     }
   ];
   render() {
     return (
-      <Paper style={{ backgroundColor: "#e6ee9c5" }}>
+      <Paper style={{ backgroundColor: "#ff8a65" }}>
         <List>
           {this.alerts.map((item, index) => (
             <div key={index}>
@@ -47,4 +51,4 @@ class NewsFeed extends React.Component {
   }
 }
 
-export default NewsFeed;
+export default Alerts;
