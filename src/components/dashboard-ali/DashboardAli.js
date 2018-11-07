@@ -18,7 +18,8 @@ import Typography from "@material-ui/core/Typography/Typography";
 import Avatar from "@material-ui/core/Avatar/Avatar";
 import ListItemText from "@material-ui/core/ListItemText/ListItemText";
 import Welcome from "./welcome";
-import { mockOrders } from "../../constants/orders";
+import {mockOrders} from "../../constants/orders";
+import {Pie} from 'react-chartjs-2';
 
 const styles = {
     listItemIcon: {
@@ -73,7 +74,9 @@ class DashboardAli extends Component {
                             <Typography color="textSecondary" gutterBottom>
                                 Overview
                             </Typography>
-                            Here comes the charts!
+                            <Pie width={150} height={150} options={{
+                                maintainAspectRatio: false
+                            }} data={this.getPieData()}/>
                         </CardContent>
                     </Card>
                     <Card>
@@ -122,6 +125,21 @@ class DashboardAli extends Component {
                 </Drawer>
             </div>
         );
+    }
+
+    getPieData() {
+        return {
+            datasets: [{
+                data: [50, 15],
+                backgroundColor: ["#4bc0c0", "#ff6384"]
+            }],
+
+            // These labels appear in the legend and in the tooltips when hovering different arcs
+            labels: [
+                'Shipped',
+                'Not responded so far'
+            ]
+        }
     }
 }
 

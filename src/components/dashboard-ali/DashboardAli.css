@@ -18,6 +18,7 @@ body {
 .add-icon {
     display: inline-block;
     border: 1px solid lightgrey;
+    border-radius: 100%;
     line-height: 0.75em;
     margin: 0.25em 0 0.75em;
     cursor: pointer;
