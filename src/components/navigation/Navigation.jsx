@@ -33,6 +33,14 @@ const styles = theme => ({
   }
 });
 
+const navigateHome = () => {
+  window.location.href = "/";
+};
+
+const navigateToOrders = () => {
+  window.location.href = "/orders";
+};
+
 function Navigation(props) {
   const { classes } = props;
 
@@ -45,12 +53,14 @@ function Navigation(props) {
       }}>
       <List className={classes.list}>
         <ListItem>
-          <ListItemIcon className={classes.listIcon}>
+          <ListItemIcon onClick={e => navigateHome()} className={classes.listIcon}>
             <HomeIcon className={classes.icon} />
           </ListItemIcon>
         </ListItem>
         <ListItem>
-          <ListItemIcon className={classes.listIcon}>
+          <ListItemIcon
+            onClick={e => navigateToOrders()}
+            className={classes.listIcon}>
             <ViewListIcon className={classes.icon} />
           </ListItemIcon>
         </ListItem>
