@@ -2,7 +2,7 @@ body {
     background-color: #8080800d;
 }
 
-.App {
+.dashboard {
     display: grid;
     align-items: start;
     grid-template-columns: 4.5em auto;

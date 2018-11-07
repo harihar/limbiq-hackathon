@@ -6,7 +6,6 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import HomeIcon from '@material-ui/icons/Home';
 import MenuIcon from '@material-ui/icons/Menu';
 import AddIcon from '@material-ui/icons/Add';
-import SearchIcon from '@material-ui/icons/Search';
 import AttachFileIcon from '@material-ui/icons/AttachFile';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import './DashboardAli.css';
@@ -18,8 +17,8 @@ import CardContent from "@material-ui/core/CardContent/CardContent";
 import Typography from "@material-ui/core/Typography/Typography";
 import Avatar from "@material-ui/core/Avatar/Avatar";
 import ListItemText from "@material-ui/core/ListItemText/ListItemText";
-import TextField from "@material-ui/core/TextField/TextField";
-import Grid from "@material-ui/core/Grid/Grid";
+import Welcome from "./welcome";
+import { mockOrders } from "../../constants/orders";
 
 const styles = {
     listItemIcon: {
@@ -41,40 +40,15 @@ class DashboardAli extends Component {
     }
 
     retrieveUnansweredPurchaseOrdersList() {
-        return [
-            {
-                id: 1,
-                poFile: "shirts.pdf"
-            },
-            {
-                id: 2,
-                poFile: "socks.pdf"
-            }
-        ];
+        return mockOrders;
     }
 
     render() {
         const {drawerOpen} = this.state;
         return (
-            <div className="App">
+            <div className="dashboard">
                 <div/>
-                <div className="welcome-header">
-                    <div style={{alignSelf: "flex-end"}}>
-                        Hi Ali, this is your Dashboard
-                    </div>
-                    <div>
-                        <Grid container spacing={8} alignItems="flex-end">
-                            <Grid item>
-                                <SearchIcon />
-                            </Grid>
-                            <Grid item>
-                                <TextField
-                                    label="Search"
-                                />
-                            </Grid>
-                        </Grid>
-                    </div>
-                </div>
+                <Welcome/>
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -111,7 +85,7 @@ class DashboardAli extends Component {
                                 {this.retrieveUnansweredPurchaseOrdersList().map((po, i) => (
                                     <ListItem button key={i}>
                                         <ListItemIcon><AttachFileIcon/></ListItemIcon>
-                                        <ListItemText>{po.poFile}</ListItemText>
+                                        <ListItemText>{po.name}</ListItemText>
                                     </ListItem>
                                 ))}
                             </List>
@@ -132,7 +106,6 @@ class DashboardAli extends Component {
                         </CardContent>
                     </Card>
                 </div>
-
 
                 <Drawer
                     variant="persistent"
