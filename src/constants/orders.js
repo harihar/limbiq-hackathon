@@ -5,6 +5,7 @@ export const mockOrders = [
     supplier: "Material +",
     quantity: 1000,
     eta: "12.12.18",
+    deliveryOnTime: null,
     file: "hats4xmas.pdf",
     status: "pending",
     trackingNumber: null
@@ -16,6 +17,7 @@ export const mockOrders = [
     supplier: "Material +",
     quantity: 5000,
     eta: "01.01.19",
+    deliveryOnTime: true,
     file: "socks.pdf",
     status: "shipped",
     trackingNumber: "MT5554859"
@@ -26,6 +28,7 @@ export const mockOrders = [
     supplier: "Material +",
     quantity: 2000,
     eta: "12.03.19",
+    deliveryOnTime: null,
     file: "xmastshirts.pdf",
     status: "accepted",
     trackingNumber: null
@@ -36,6 +39,7 @@ export const mockOrders = [
     supplier: "Material +",
     quantity: 3000,
     eta: "10.12.18",
+    deliveryOnTime: true,
     file: "socks.pdf",
     status: "readyForShipment",
     trackingNumber: null
@@ -46,6 +50,7 @@ export const mockOrders = [
     supplier: "Material +",
     quantity: 8000,
     eta: "11.11.18",
+    deliveryOnTime: false,
     file: "socks.pdf",
     status: "shipped",
     trackingNumber: "MT3324859"
@@ -56,6 +61,7 @@ export const mockOrders = [
     supplier: "Material +",
     quantity: 2500,
     eta: "22.12.18",
+    deliveryOnTime: true,
     file: "socks.pdf",
     status: "delivered",
     trackingNumber: "MT5554859"
