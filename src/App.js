@@ -26,7 +26,7 @@ class App extends Component {
                 <Navigation/>
                 <div style={{float: "right"}}>
                     <TextField
-                        style={{margin: "normal", marginRight: "100px"}}
+                        style={{margin: "normal", marginRight: "20px"}}
                         placeholder="Search"
                         InputProps={{
                             startAdornment: (
@@ -38,7 +38,6 @@ class App extends Component {
                     />
                 </div>
                 <div>{viewToRender}</div>
-                <DashBoard/>
             </div>
         );
     }

@@ -5,14 +5,8 @@ body {
 .dashboard {
     display: grid;
     align-items: start;
-    grid-template-columns: 4.5em auto;
     grid-column-gap: 1.5em;
     margin-right: 1.5em;
-}
-
-.welcome-header {
-    display: grid;
-    grid-template-columns: 1fr auto;
 }
 
 .add-icon {
