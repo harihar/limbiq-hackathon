@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
+import InputLabel from "@material-ui/core/InputLabel";
 
 const styles = theme => ({
   root: {
@@ -14,6 +15,9 @@ const styles = theme => ({
   },
   selectEmpty: {
     marginTop: theme.spacing.unit * 2
+  },
+  filterLabel: {
+    marginRight: 10
   }
 });
 
@@ -34,23 +38,28 @@ class StatusFilter extends Component {
     const { selectedFilter } = this.state;
 
     return (
-      <Select
-        className={classes.filter}
-        value={selectedFilter}
-        onChange={this.handleChange}
-        inputProps={{
-          name: "status",
-          id: "status-filter"
-        }}>
-        <MenuItem key={`all-filter`} value={"all"}>
-          all
-        </MenuItem>
-        {statuses.map(status => (
-          <MenuItem key={`${status}-filter`} value={status}>
-            {status}
+      <Fragment>
+        <InputLabel className={classes.filterLabel} shrink>
+          Status:
+        </InputLabel>
+        <Select
+          className={classes.filter}
+          value={selectedFilter}
+          onChange={this.handleChange}
+          inputProps={{
+            name: "status",
+            id: "status-filter"
+          }}>
+          <MenuItem key={`all-filter`} value={"all"}>
+            all
           </MenuItem>
-        ))}
-      </Select>
+          {statuses.map(status => (
+            <MenuItem key={`${status}-filter`} value={status}>
+              {status}
+            </MenuItem>
+          ))}
+        </Select>
+      </Fragment>
     );
   }
 }
